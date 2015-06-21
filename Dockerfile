@@ -12,4 +12,13 @@ RUN cd /tmp/tor-${VERSION} && make install
 RUN cd /tmp/tor-${VERSION} && make clean
 RUN cd /tmp/tor-${VERSION} && make dist-gzip
 
-CMD /bin/ls
+# Ports
+EXPOSE 9001
+EXPOSE 9050
+EXPOSE 8080
+
+# Tor
+ADD ./torrc /etc/tor/torrc
+ADD ./startup.sh /startup.sh
+
+ENTRYPOINT /startup.sh
