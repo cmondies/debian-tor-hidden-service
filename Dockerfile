@@ -1,6 +1,6 @@
 FROM debian:stable
 RUN apt-get update
-RUN apt-get install lighttpd make automake autoconf gcc libtool curl libevent-dev libssl1.0 musl musl-dev libgcc openssl openssl-dev openssh
+RUN apt-get install lighttpd make automake autoconf gcc libtool curl libevent-dev libssl1.0 musl musl-dev openssl
 
 ENV VERSION 0.2.6.9
 
