@@ -20,5 +20,6 @@ EXPOSE 8080
 # Tor
 ADD ./torrc /etc/tor/torrc
 ADD ./startup.sh /startup.sh
+RUN chmod 777 /startup.sh
 
 ENTRYPOINT /startup.sh
