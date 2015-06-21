@@ -1,0 +1,26 @@
+# Logging option
+Log notice stdout
+
+# SocksProxy
+SocksPort 9050 
+SocksBindAddress 0.0.0.0 
+SocksPolicy accept 192.168.1.0/24
+SocksPolicy reject *
+
+#Relay
+ORPort 9001
+ExitRelay 1
+
+DirPort 8080
+
+ExitPolicy accept *:80        # HTTP
+ExitPolicy reject *:*
+
+#Contact
+ContactInfo changeme@localhost
+
+## The directory for keeping all the keys/etc
+DataDirectory /var/lib/tor
+
+HiddenServiceDir /var/lib/tor/hidden-service
+HiddenServicePort 80 192.168.1.201:8081
