@@ -9,7 +9,7 @@ SocksPolicy reject *
 
 #Relay
 ORPort 9001
-ExitRelay 1
+#ExitRelay 1
 
 DirPort 8080
 
