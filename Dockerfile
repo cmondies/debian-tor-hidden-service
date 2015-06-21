@@ -1,14 +1,14 @@
 FROM debian:stable
 RUN apt-get update
-RUN apt-get install -y lighttpd make automake autoconf gcc libtool curl libevent-dev libssl-dev libssl1.0 openssl
+RUN apt-get install -y lighttpd make automake autoconf gcc libtool curl libevent-dev libssl-dev libssl1.0 openssl tor
 
-ENV VERSION 0.2.6.9
-RUN curl https://dist.torproject.org/tor-${VERSION}.tar.gz | tar xz -C /tmp
-RUN cd /tmp/tor-${VERSION} && ./configure
-RUN cd /tmp/tor-${VERSION} && make
-RUN cd /tmp/tor-${VERSION} && make install
-RUN cd /tmp/tor-${VERSION} && make clean
-RUN cd /tmp/tor-${VERSION} && make dist-gzip
+#ENV VERSION 0.2.6.9
+#RUN curl https://dist.torproject.org/tor-${VERSION}.tar.gz | tar xz -C /tmp
+#RUN cd /tmp/tor-${VERSION} && ./configure
+#RUN cd /tmp/tor-${VERSION} && make
+#RUN cd /tmp/tor-${VERSION} && make install
+#RUN cd /tmp/tor-${VERSION} && make clean
+#RUN cd /tmp/tor-${VERSION} && make dist-gzip
 
 #RUN echo "deb http://deb.torproject.org/torproject.org wheezy main" >> /etc/apt/sources.list
 #RUN gpg --keyserver keys.gnupg.net --recv 886DDD89
